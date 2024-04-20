@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6df9c2ad-abda-4410-8101-8de31f5f23ce">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromd" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tod" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * from ventes
+where saleDate between $P{fromd} and  $P{tod}]]>
+	</queryString>
+	<field name="idSale" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saleDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="11" width="261" height="44" uuid="e9faf0ef-756f-421b-9ad4-96c08088c4cb"/>
+				<textElement>
+					<font fontName="Arial Black" size="30"/>
+				</textElement>
+				<text><![CDATA[  Order details]]></text>
+			</staticText>
+			<line>
+				<reportElement x="154" y="55" width="261" height="1" uuid="217181f0-3256-4ac7-a666-19c11766ced0"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="29" y="11" width="100" height="32" uuid="b855db5d-be05-4b51-9238-9fdac121bbf0"/>
+				<textElement>
+					<font fontName="Verdana Pro Black" size="22"/>
+				</textElement>
+				<text><![CDATA[Sale ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="11" width="100" height="32" uuid="cda3a228-f5fc-46a2-bfdb-e5839a1d83dc"/>
+				<textElement>
+					<font fontName="Verdana Pro Black" size="22"/>
+				</textElement>
+				<text><![CDATA[Product ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="11" width="127" height="32" uuid="71885bcd-6091-4c43-a9ee-ec9ef05c2a05"/>
+				<textElement>
+					<font fontName="Verdana Pro Black" size="22"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="11" width="87" height="20" uuid="a1cec37a-8320-4ee3-b2d9-6f0d2d18c1bb"/>
+				<textElement>
+					<font fontName="Arial Nova" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idSale}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="11" width="87" height="20" uuid="fa80fab3-e867-44d3-bce5-53a216abc3c9"/>
+				<textElement>
+					<font fontName="Arial Nova" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="11" width="87" height="20" uuid="00c4fdbc-ee4f-447d-82af-46c253894bb8"/>
+				<textElement>
+					<font fontName="Arial Nova" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qantity}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="29" y="35" width="499" height="1" uuid="e10d57da-f94d-45b7-a286-ce23271bee7c"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
